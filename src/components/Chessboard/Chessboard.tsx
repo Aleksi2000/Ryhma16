@@ -19,34 +19,12 @@ export default function Chessboard() {
     const [enemyName, setEnemyName] = useState('')
     const [playerTwo, setPlayerTwo] = useState('')
     const [playerTwoEnemy, setPlayerTwoEnemy] = useState('')
-    const [currentTeam, setCurrentTeam] = useState<TeamType | undefined>(undefined);
-
-// useEffect(() => {
-//   if (whatSide === 1) {
-//     setCurrentTeam(TeamType.OUR);
-//   } else if (whatSide === 0) {
-//     setCurrentTeam(TeamType.OPPONENT);
-//   }
-// }, [whatSide]);
 
 
     socket.on("side", (side) =>{
         setWhatSide(side) 
     })
-//     const setTeamType = (team: TeamType) => {
-//         let currentTurn
-//         if(whatSide === 1){
-//             currentTurn = TeamType.OUR
-//         } else if(whatSide === 0){
-//             currentTurn = TeamType.OPPONENT
-//         }
-//         if(team!== currentTurn){
-//             return false
-//         }
-//         currentTurn= team === TeamType.OUR ? TeamType.OPPONENT : TeamType.OUR;
 
-//         return true
-//     }
 
     function playImpactSound(volume: number) {
         const audio = new Audio(impact);
